@@ -1,0 +1,91 @@
+.bottom-bar.row{
+  margin-top: 20px;
+}
+
+.row {
+    clear: both;
+}
+
+
+.mobile-navigation{
+  display: none !important;
+}
+
+
+/*
+.mobile-nav-bg.col-sm-5.col-md-4.clearfix{
+  float: right !important;
+}
+*/
+/*
+
+.col-sm-4 .enroll-now{
+  float: right !important; 
+  margin-right: -20px; 
+}
+*/
+
+
+.col-md-4{
+  width: 30% !important;
+}
+
+.col-xs-3{
+  width: 20% !important;
+}
+
+.col-sm-8{
+  width: 60% !important;
+}
+
+.bottom-bar{
+  height: 50px;
+/*   background: yellow; */
+}
+
+
+header .top-bar {
+    z-index: 10;
+    position: relative;
+}
+
+
+.searchbox{
+  height: 18px;
+  margin-right: -40px !important;
+  padding-right: 0 !important;
+  border: 0;
+  width: 96%;
+}
+
+.searchbox_submit{
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.sub-menu{
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.main-menu .row, .secondary-menu .row{
+  background: none;
+}
+
+.navigation-dropdowns-container .dropdown{
+  padding: 2em 0;
+}
+
+.navigation-dropdowns-container .dropdown .row {
+    margin: 0 2em;
+}
+
+
+
+
+
+
+
+
+
+
