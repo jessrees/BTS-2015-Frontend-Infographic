@@ -1,0 +1,35 @@
+<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+
+<link href="c3/c3.min.js" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="c3/c3.min.js"></script>
+
+
+<div id="chart"></div>
+
+
+<script>
+
+var chart = c3.generate({
+    data: {
+        columns: [
+            ['Enhance Existing Career', .34],
+            ['Switch Careers', .38], 
+            ['Start Own Business', .28]
+        ],
+        type: 'pie',
+        colors: {
+        	'Enhance Existing Career': '#1e6ba6',
+            'Switch Careers': '#e71f53',
+            'Start Own Business': '#4ea74d'
+        }
+    },
+    pie: {
+        label: {
+            format: function (value, ratio, id) {
+                return d3.format('%')(value);
+            }
+        }
+    }
+});
+</script>

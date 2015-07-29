@@ -1,0 +1,58 @@
+    <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+
+	<link href="c3/c3.min.js" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="c3/c3.min.js"></script>
+
+    <style>
+    #chart {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    </style>
+
+<h1>Global Business</h1>
+<p>52% of prospective business students around the world say that want to study in a school outside of their country of citzenship.</p>
+<h2>The top travelers:</h2>
+<div id="chart"></div>
+
+<script>
+
+var colors = ['#1e6ba6', '#e71f53', '#4ea74d', '#e7579d'];
+
+
+var chart = c3.generate({
+    data: {
+        columns: [
+            ['Country of Citizenship', 97, 95, 94, 81]
+        ],
+        type: 'bar',
+        color: function (color, d) {
+            return colors[d.index];
+        }
+    },
+    bar: {
+        width: {
+            ratio: 0.9 // this makes bar width 50% of length between ticks
+        }
+    },
+    axis: {
+    	y: {
+            min: 70,
+            label: {
+                text: '% of Students',
+                position: 'outer-middle'
+            }
+        },
+        x: {
+            label: {
+                position: 'outer-center'
+            },
+            type: 'category',
+            categories: ['Latin Americans', 'Eastern Europeans', 'Asian-Pacific Students', 'Africans and Centeral & South Asians']
+
+        }
+    }
+});
+</script>

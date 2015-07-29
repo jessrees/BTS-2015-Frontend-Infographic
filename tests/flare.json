@@ -1,0 +1,15 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {"name": "School Websites", "size": 100},
+    {"name": "Friends & Family", "size": 64},
+    {"name": "Published Rankings", "size": 58},
+    {"name": "Current Students & Alumni", "size": 49},
+    {"name": "School Admissions Professionals", "size": 49}
+   ]
+  }
+ ]
+}
