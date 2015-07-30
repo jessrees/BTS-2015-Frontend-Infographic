@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kaplan Infographic - Breakdown by Career Goals</title>
+    <!-- Default Style Sheets -->
+        <link rel="stylesheet" href="../assets/_external-css/application.css">
+        <link rel="stylesheet" href="../assets/_external-css/content.css">
+        <link rel="stylesheet" href="../assets/_external-css/fonts.css">
+    <!-- Stylesheet for infographics -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    </head>
+    <body>
+		<script type="text/javascript">
+$(function () {
+    Highcharts.setOptions({
+        colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#c0d44c', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+    });
+    $('#container').highcharts({
+        series: [{
+            type: "treemap",
+            layoutAlgorithm: 'stripes',
+            alternateStartingDirection: true,
+            levels: [{
+                level: 1,
+                layoutAlgorithm: 'sliceAndDice',
+                dataLabels: {
+                    enabled: true,
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    style: {
+                        fontSize: '23px',
+                        fontWeight: 'bold',
+                        textShadow: 'none',
+                        fontFamily: '"FacitWeb", "lucida grande", sans-serif'
+                    }
+                }
+            }],
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '%<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            },
+            data: [{
+                id: 'A',
+                name: 'School Websites',
+                color: '#1e6ba6'
+            }, {
+                id: 'B',
+                name: 'Friends & Family',
+                color: '#e71f53'
+            }, {
+                id: 'C',
+                name: 'Published Rankings',
+                color: '#4ea74c'
+            }, {
+                id: 'D',
+                name: 'Current Students & Alumni',
+                color: '#c0d44c'
+            }, {
+                id: 'E',
+                name: 'School Admissions Professionals',
+                color: '#ef7933'
+            }, {
+                parent: 'A',
+                name: 'Impact Score',
+                value: 100
+            }, {
+                parent: 'B',
+                name: 'Impact Score',
+                value: 64
+            }, {
+                parent: 'C',
+                name: 'Impact Score',
+                value: 58
+            }, {
+                parent: 'D',
+                name: 'Impact Score',
+                value: 49
+            }, {
+                parent: 'E',
+                name: 'Impact Score',
+                value: 49
+            }]
+        }],
+        title: {
+            text: 'Top Resouces that Impact School Choices'
+        }
+    });
+});
+		</script>
+	</head>
+	<body>
+
+
+
+
+<div id="container"></div>
+
+        <script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
+         <script src="../assets/_external-js/Highcharts/js/modules/treemap.js"></script>
+        
+    </body>
+</html>
+    </body>
+</html>
+

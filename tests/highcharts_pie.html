@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       	<title>Kaplan Infographic - How to put an MBA  to work</title>
+	<!-- Default Style Sheets -->
+		<link rel="stylesheet" href="../assets/_external-css/application.css">
+		<link rel="stylesheet" href="../assets/_external-css/content.css">
+		<link rel="stylesheet" href="../assets/_external-css/fonts.css">
+	<!-- Stylesheet for infographics -->
+		<link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    </head>
+    <body>
+
+	<script type="text/javascript">
+	$(function () {
+		Highcharts.setOptions({
+		    colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+		});
+		    $('#container').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false,
+		            type: 'pie'
+		        },
+		        title: {
+		            text: 'How to put an MBA to Work'
+		        },
+		        tooltip: {
+		            pointFormat: '<b>{point.percentage:.0f}%</b>'
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: true,
+		                    format: '<b>{point.name}</b><br><span style="font-size: 3.5em; ">{point.percentage:.0f}%</span>',
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+		                        fontFamily: '"FacitWeb", "lucida grande", sans-serif',
+			               		textShadow: 'none'
+		                    }
+		                }
+		            }
+		        },
+		        series: [{
+		            name: "Career Goals",
+		            colorByPoint: true,
+		            data: [{
+		                name: "Enhance existing career",
+		                y: 34
+		            }, {
+		                name: "Switch Careers",
+		                y: 38
+		            }, {
+		                name: "Start own business",
+		                y: 28
+		            }]
+		        }]
+		    });
+		});
+		</script>
+
+		<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+		<script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
+		
+    </body>
+</html>

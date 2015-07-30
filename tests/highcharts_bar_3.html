@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kaplan Infographic - Benefits of MBA</title>
+    <!-- Default Style Sheets -->
+        <link rel="stylesheet" href="../assets/_external-css/application.css">
+        <link rel="stylesheet" href="../assets/_external-css/content.css">
+        <link rel="stylesheet" href="../assets/_external-css/fonts.css">
+    <!-- Stylesheet for infographics -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+        <style type="text/css">
+        .c_group {
+            width: 33%;
+            float: left;
+        }
+        </style>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+        $(function () {
+            Highcharts.setOptions({
+                colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+            });
+            $('#c1').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Increase Job Opprotunities'
+                },
+                subtitle: {
+                    text: 'vs.',
+                    y: 200,
+                    style: {
+                        fontSize: '4em'
+                    }
+                },
+                xAxis: {
+                    categories: [
+                        'Millennials',
+                        'Boomers'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 20,
+                    max: 70,
+                    title: {
+                        text: null
+                    }, 
+                    labels: {
+                        enabled: false
+                    }
+                },
+                tooltip: {
+                    enabled: false,
+                },
+                 credits: {
+                    enabled: false
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.01,
+                        borderWidth: 0,
+                        groupPadding: .2,
+                        colorByPoint: true,
+                        states: {
+                            hover: {
+                                brightness: -0.1,
+                                borderColor: 'red'                                                          
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    showInLegend: false,
+                    data: [66, 65],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        align: 'center',
+                        inside: true,
+                        verticalAlign: 'bottom',
+                        format: '{point.y:.0f}%', // one decimal
+                        y: 20,
+                        style: {
+                            fontSize: '4em',
+                            fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
+                            textShadow: 'none'
+                        }
+                    }
+                }]
+            });
+
+
+
+
+            
+
+            $('#c2').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Increase Salary Potential'
+                },
+                subtitle: {
+                    text: 'vs.',
+                    y: 200,
+                    style: {
+                        fontSize: '4em'
+                    }
+                },
+                xAxis: {
+                    categories: [
+                        'Millennials',
+                        'Boomers'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 20,
+                    max: 70,
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        enabled: false
+                    }
+                },
+                tooltip: {
+                    enabled: false,
+                },
+                 credits: {
+                    enabled: false
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.01,
+                        borderWidth: 0,
+                        groupPadding: .2,
+                        colorByPoint: true,
+                        states: {
+                            hover: {
+                                brightness: -0.1,
+                                borderColor: 'red'                                                          
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    showInLegend: false,
+                    data: [63, 46],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        align: 'center',
+                        inside: true,
+                        verticalAlign: 'bottom',
+                        format: '{point.y:.0f}%', // one decimal
+                        y: 20,
+                        style: {
+                            fontSize: '4em',
+                            fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
+                            textShadow: 'none'
+                        }
+                    }
+                }]
+            });
+            
+
+
+  
+
+            $('#c3').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Accelerate Careers'
+                },
+                subtitle: {
+                    text: 'vs.',
+                    y: 200,
+                    style: {
+                        fontSize: '4em'
+                    }
+                },
+                xAxis: {
+                    categories: [
+                        'Millennials',
+                        'Boomers'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 20,
+                    max: 70,
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        enabled: false
+                    }
+                },
+                tooltip: {
+                    enabled: false,
+                },
+                 credits: {
+                    enabled: false
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.01,
+                        borderWidth: 0,
+                        groupPadding: .2,
+                        colorByPoint: true,
+                        states: {
+                            hover: {
+                                brightness: -0.1,
+                                borderColor: 'red'                                                          
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    showInLegend: false,
+                    data: [58, 41],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        align: 'center',
+                        inside: true,
+                        verticalAlign: 'bottom',
+                        format: '{point.y:.0f}%', // one decimal
+                        y: 20,
+                        style: {
+                            fontSize: '4em',
+                            fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
+                            textShadow: 'none'
+                        }
+                    }
+                }]
+            });
+   
+
+
+
+        });
+        </script>
+
+        <div id="c1" class="c_group"></div>
+        <div id="c2" class="c_group"></div>
+        <div id="c3" class="c_group"></div>
+
+
+
+
+
+        <script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
+
+    </body>
+</html>

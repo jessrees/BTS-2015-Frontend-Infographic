@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       	<title>Kaplan Infographic - Top Travelers</title>
+	<!-- Default Style Sheets -->
+		<link rel="stylesheet" href="../assets/_external-css/application.css">
+		<link rel="stylesheet" href="../assets/_external-css/content.css">
+		<link rel="stylesheet" href="../assets/_external-css/fonts.css">
+	<!-- Stylesheet for infographics -->
+		<link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    </head>
+    <body>
+
+	<script type="text/javascript">
+		$(function () {
+			Highcharts.setOptions({
+			    colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+			});
+		    $('#container').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: 'The Top Travelers'
+		        },
+		        subtitle: {
+		            text: 'Source: MBA.com Prospective Students Survey March 2015 p. 11'
+		        },
+		        xAxis: {
+		            categories: [
+		                'Latin Americans',
+		                'Eastern Europeans',
+		                'Asian-Pacific students',
+		                'Africans and Centeral & South Asians'
+		            ],
+		            crosshair: true
+		        },
+		        yAxis: {
+		            min: 0,
+		            ceiling: 100,
+		            title: {
+		                text: '% of Students'
+		            }
+		        },
+		        tooltip: {
+		            enabled: false,
+		        },
+		        plotOptions: {
+		            column: {
+		                pointPadding: 0.01,
+		                borderWidth: 0,
+		                groupPadding: .05,
+		                colorByPoint: true,
+		                states: {
+		                    hover: {
+		                    	brightness: -0.1,
+		                    	borderColor: 'red'                                                          
+		                    }
+		                }
+		            }
+		        },
+		        series: [{
+		        	showInLegend: false,
+		            data: [97, 95, 94, 81],
+		            dataLabels: {
+			            enabled: true,
+			            color: '#FFFFFF',
+			            align: 'center',
+			            inside: true,
+			            verticalAlign: 'bottom',
+			            format: '{point.y:.0f}%', // one decimal
+			            y: 50,
+			            style: {
+			                fontSize: '4em',
+			                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
+			                textShadow: 'none'
+			            }
+			        }
+		        }]
+		    });
+		});
+		</script>
+
+		<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+		<script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
+		
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kaplan Infographic - Breakdown by Career Goals</title>
+    <!-- Default Style Sheets -->
+        <link rel="stylesheet" href="../assets/_external-css/application.css">
+        <link rel="stylesheet" href="../assets/_external-css/content.css">
+        <link rel="stylesheet" href="../assets/_external-css/fonts.css">
+    <!-- Stylesheet for infographics -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        series: [{
+            type: "treemap",
+            layoutAlgorithm: 'squarified',
+             dataLabels: {
+                 enabled: true,
+                 align: 'center',
+                 verticalAlign: 'middle',
+                 style: {
+                     fontSize: '1.5em',
+                     fontWeight: 'bold',
+                     textShadow: 'none',
+                     fontFamily: '"FacitWeb", "lucida grande", sans-serif'
+                 },
+             },
+            data: [{
+                name: 'School Websites',
+                value: 100,
+                color: '#1e6ba6'
+            }, {
+                name: 'Friends & Family',
+                value: 64,
+                color: '#e71f53'
+            }, {
+                name: 'Published Rankings',
+                value: 58,
+                color: '#4ea74c'
+            }, {
+                name: 'Current Students & Alumni',
+                value: 49,
+                color: '#ef7933'
+            },  {
+                name: 'School Admissions Professionals',
+                value: 49,
+                color: '#c0d44c'
+            },
+            ]
+        }],
+        title: {
+            text: 'Top Resources that Impact School Choices'
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b> Impact Score: ' + this.point.value;
+            }
+        }
+    });
+});
+		</script>
+	</head>
+	<body>
+      <script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
+         <script src="../assets/_external-js/Highcharts/js/modules/treemap.js"></script>
+        
+<div id="container"></div>
+	</body>
+</html>

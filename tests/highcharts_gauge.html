@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kaplan Infographic - Breakdown by Career Goals</title>
+    <!-- Default Style Sheets -->
+        <link rel="stylesheet" href="../assets/_external-css/application.css">
+        <link rel="stylesheet" href="../assets/_external-css/content.css">
+        <link rel="stylesheet" href="../assets/_external-css/fonts.css">
+    <!-- Stylesheet for infographics -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+        <style type="text/css">
+        .c-chart-group {
+            width: 33%;
+            float: left;
+        }
+        </style>
+
+    </head>
+    <body>
+		<script type="text/javascript">
+$(function () {
+
+
+    Highcharts.setOptions({
+        colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+    });
+
+    var gaugeOptions = {
+
+        chart: {
+            type: 'solidgauge'
+        },
+
+        title: {
+            text: null
+        },
+
+        pane: {
+            center: ['50%', '85%'],
+            size: '140%',
+            startAngle: -90,
+            endAngle: 90,
+            background: {
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                innerRadius: '60%',
+                outerRadius: '100%',
+                shape: 'arc'
+            }
+        },
+
+        tooltip: {
+            enabled: false
+        },
+
+        // the value axis
+        yAxis: {
+            stops: [
+                [0.88, '#1e6ba6'],
+                [0.90, '#e71f53']
+            ],
+            lineWidth: 0,
+            minorTickInterval: null,
+            tickPixelInterval: 400,
+            tickWidth: 0,
+            title: {
+                y: -70
+            },
+            labels: {
+                y: 16
+            }
+        },
+
+        plotOptions: {
+            solidgauge: {
+                dataLabels: {
+                    y: 5,
+                    borderWidth: 0,
+                    useHTML: true
+                }
+            }
+        }
+    };
+
+    $('#container-2014').highcharts(Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 25,
+            max: 50,
+            title: {
+                text: '2014'
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        series: [{
+            name: '2014',
+            data: [44],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}%</span><br/>'
+            },
+            tooltip: {
+                valueSuffix: ' %'
+            }
+        }]
+
+    }));
+
+    $('#container-2010').highcharts(Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 25,
+            max: 50,
+            title: {
+                text: '2010'
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        series: [{
+            name: '2010',
+            data: [49],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}%</span><br/>'
+            },
+            tooltip: {
+                valueSuffix: ' %'
+            }
+        }]
+
+    }));
+
+
+
+});
+		</script>
+	</head>
+	<body>
+
+        <div style="width: 600px; height: 400px; margin: 0 auto">
+        	<div id="container-2010" style="width: 300px; height: 200px; float: left"></div>
+        	<div id="container-2014" style="width: 300px; height: 200px; float: left"></div>
+        </div>
+
+        <script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
+        <script src="../assets/_external-js/Highcharts/js/highcharts-more.js"></script>
+        <script src="../assets/_external-js/Highcharts/js/modules/solid-gauge.js"></script>
+
+
+        
+    </body>
+</html>

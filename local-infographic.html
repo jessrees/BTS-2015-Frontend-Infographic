@@ -11,11 +11,14 @@
 		<link rel="stylesheet" href="assets/_external-css/fonts.css">
 	<!-- Stylesheet for infographics -->
 		<link rel="stylesheet" type="text/css" href="assets/css/infographic-style.css" />
+	<!-- Stylesheet for charts --> 
+		<link rel="stylesheet" href="assets/css/data-vis.css">
 	<!-- Default js -->
 		<script src="assets/_external-js/jquery.min.js"></script>
-		<script src="assets/_external-js/kaptest-min-new.js"></script>	
-	<!--  D3 -->
-		<script src="/assets/_external-js/d3/d3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="assets/_external-js/kaptest-min-new.js"></script>
+	
+
 </head>
 
 <body>
@@ -54,6 +57,67 @@
 </div>
 
 <!-- INFOGRAPIC -->
+
+
+
+
+<div class="container container-lead ">
+	<div class="row">
+			<div class="col-sm-5 text-center">
+			</div>
+			<div class="col-sm-7">
+				<h2 class="gamma">Weighing the Options</h2>
+				<p>In the first phase, students will have all the options to consider. They've got a ways to go before the next phase of readiness, but that's not a problem. They should be careful not to skip steps and run too quickly...</p>
+				
+
+
+				<div id="tabs">
+				  <ul>
+				    <li><a href="#tabs-1">Graph 1</a></li>
+				    <li><a href="#tabs-2">Graph 2</a></li>
+				    <li><a href="#tabs-3">Graph 3</a></li>
+				  </ul>
+				  <div id="tabs-1">
+				  	<!-- container for the chart to be rendered in -->
+				  	<div id="wo-reap-benefits"></div>
+				  </div>
+				  <div id="tabs-2">
+				    <p>Another Chart</p>
+				  </div>
+				  <div id="tabs-3">
+				    <p>Another Chart</p>
+				  </div>
+				</div>
+
+			</div>
+	</div>
+</div>
+
+
+<div class="container container-lead ">
+	<div class="row">
+			<div class="col-sm-7">
+				<h2 class="gamma">Plotting the Path</h2>
+				<p>Students in phase two know they want a future. They also know how long the road is. To get to the next phase of readiness, they have to start making choices.</p>
+			</div>
+			<div class="col-sm-5 text-center">
+			</div>
+	</div>
+</div>
+
+
+<div class="container container-lead ">
+	<div class="row">
+			<div class="col-sm-5 text-center">
+			</div>
+			<div class="col-sm-7">
+				<h2 class="gamma">On the Move</h2>
+				<p>People in this phase are knocking on the door to school. They know from experience what they want to study and why they want to be in business....</p>
+			</div>
+	</div>
+</div>
+
+
 
 
 
@@ -125,8 +189,6 @@
 			            <area shape="circle" coords="290,230,6" class="school24" data-tooltip="<span style='font-family:facitweb;'> Tulane University, A. B. Freeman School of Business </span><br><strong> 605 </strong>" data-hasqtip="23" aria-describedby="qtip-23">
 
 			          </map>
-
-
 			        <h4 class="subheading" style="margin-top: -295px; margin-bottom: 260px;">(and the GMAT® scores you might need)*</h4>
 			        <h4 class="subheading" style="color:#656565;"><i class="ss-navigateup"></i> Hover over the points on the map to see the score related to each school.</h4> 
 			      </div> 
@@ -139,6 +201,11 @@
 
 
 <script>
+
+
+ $(function() {
+    $( "#tabs" ).tabs();
+  });
 	
 //MAP TOOLTIPS SCRIPT
 var tooltipNum = ['area.school1', 'area.school2', 'area.school3', 'area.school4', 'area.school5', 'area.school6', 'area.school7', 'area.school8', 'area.school9', 'area.school10', 'area.school11', 'area.school12', 'area.school13', 'area.school14', 'area.school15', 'area.school16', 'area.school17', 'area.school18', 'area.school19', 'area.school20', 'area.school21', 'area.school22', 'area.school23', 'area.school24']
@@ -185,7 +252,8 @@ $(tooltipNum).qtip({
 
 
 
-
+<script src="assets/_external-js/Highcharts/js/highcharts.js"></script>
+<script type="text/javascript" src="assets/js/charts/wo_reap_benefits.js"></script>
 
 
 
