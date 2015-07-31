@@ -18,81 +18,86 @@
 
     </head>
     <body>
-		<script type="text/javascript">
+<script type="text/javascript">
 $(function () {
 
     Highcharts.setOptions({
         colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
     });
+
     $('#container').highcharts({
         chart: {
-            type: 'column'
+            type: 'bar',
+            spacingBottom: 50,
+            margin: [0, 0, 0, 0] 
         },
         title: {
-            text: 'Breakdown by Career Goals'
+            text: 'The Top 3 Application Killers'
+        },
+        subtitle: {
+            text: 'Source: Kaplan Test Prep 2014 Survey of Business School Admissions Officers'
         },
         xAxis: {
-            categories: ['Career Enhancer', 'Career Switcher', 'Aspiring Entrepreneur']
+            title: {
+                text: null
+            }, 
+            labels: {
+                enabled: false
+            }
         },
         yAxis: {
             min: 0,
+            ceiling: 90,
+            gridLineWidth: 0,
             title: {
-                text: '% of Respondents'
+                text: null
             },
-            stackLabels: {
+            labels: {
                 enabled: false,
-                style: {
-                    fontWeight: 'bold',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + ': </b>' + this.y + '%'
+            }
+        },
+        plotOptions: {
+            bar: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.0f}%', 
+                    groupPadding: 0,
+                    style: {
+                        textShadow: 'none',
+                        fontSize: '4em',
+                        fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
+                    },
                 }
             }
         },
         legend: {
-            align: 'right',
-            x: -30,
-            verticalAlign: 'top',
-            y: 25,
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
             floating: true,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-            borderColor: '#CCC',
+            y: 20,
             borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
             shadow: false
         },
-        tooltip: {
-            formatter: function () {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '%<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal',
-                pointPadding: 0.01,
-                borderWidth: 0,
-                groupPadding: .02,
-                dataLabels: {
-                    enabled: true,
-                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
-                    style: {
-                        textShadow: 'none',
-                        fontSize: '33px'
-                    },
-                    formatter: function () {
-                        return  this.y + '%'
-                    }
-                }
-            }
+        credits: {
+            enabled: false
         },
         series: [{
-            name: 'MBA and Master\'s',
-            data: [25, 25, 28]
+            name: 'A Lack of Relevant Work Experience',
+            data: [9]
         }, {
-            name: 'Master\'s Only',
-            data: [31, 19, 16]
+            name: 'A Low Undergraduate GPA',
+            data: [32]
         }, {
-            name: 'MBA Only',
-            data: [43, 57, 55]
+            name: 'A Low GMAT/GRE Score',
+            data: [50]
         }]
     });
 });
@@ -106,5 +111,6 @@ $(function () {
 
 
         <script src="../assets/_external-js/Highcharts/js/highcharts.js"></script>
-	</body>
+    </body>
 </html>
+

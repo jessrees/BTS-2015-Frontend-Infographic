@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="../assets/_external-css/fonts.css">
 	<!-- Stylesheet for infographics -->
 		<link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+	<!-- Stylesheet for charts --> 
+		<link rel="stylesheet" href="../assets/css/data-vis.css">
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,13 +22,22 @@
     <body>
 
 	<script type="text/javascript">
+
+	
+
 		$(function () {
 			Highcharts.setOptions({
-			    colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+			    colors: ['#1e6ba6'],
+			    style: {
+			    	fontSize: '22px'
+			    }
 			});
-		    $('#container').highcharts({
+		    var chart = $('#container').highcharts({
 		        chart: {
-		            type: 'column'
+		            type: 'column',
+		        },
+		        credits: {
+		        	enabled: false,
 		        },
 		        title: {
 		            text: 'The Younger the Better to Reap the Benefits of an MBA'
@@ -36,20 +47,26 @@
 		        },
 		        xAxis: {
 		            categories: [
-		                '24 & Under',
-		                '25-26',
-		                '27-28'
+		                '24 Years Old & Under',
+		                '25-26 Years Old',
+		                '27-28 Years Old'
 		            ],
-		            crosshair: true
+		            crosshair: {
+          	  			color: '#eae6e0'
+        			},
 		        },
 		        yAxis: {
 		            min: 0,
 		            title: {
 		                text: '% of Increase after 3 years'
+		            },
+		            gridLineWidth: 0,
+		            labels: {
+		            	enabled: false,
 		            }
 		        },
 		        tooltip: {
-		            enabled: false,
+		            enabled: false
 		        },
 		        plotOptions: {
 		            column: {
@@ -58,9 +75,16 @@
 		                groupPadding: .05,
 		                colorByPoint: true,
 		                states: {
+		                	normal: {
+		                		animation: true,
+		                	},
 		                    hover: {
 		                    	brightness: -0.1,
-		                    	borderColor: 'red'                                                          
+		                    	borderColor: 'red',
+		                    	animation: {
+		                    		enabled: true,
+		                    		duration: 1000,
+		                    	}                                                
 		                    }
 		                }
 		            }
@@ -68,14 +92,23 @@
 		        series: [{
 		        	showInLegend: false,
 		            data: [137, 110, 89],
+		            cursor: 'pointer',
+		            animation: {
+		                duration: 2010,
+		                easing: 'easeOutExpo'
+		            },
 		            dataLabels: {
 			            enabled: true,
 			            color: '#FFFFFF',
 			            align: 'center',
 			            inside: true,
+			            defer: false,
 			            verticalAlign: 'bottom',
-			            format: '{point.y:.0f}%', // one decimal
 			            y: 50,
+			            useHTML: true,
+			            formatter: function() {
+			            	return ("<span class='datalabel'>" + this.y + "%</span>");
+			            },
 			            style: {
 			                fontSize: '4em',
 			                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
@@ -84,6 +117,10 @@
 			        }
 		        }]
 		    });
+
+			$(window).resize(function() {
+				chart.redraw();
+			});
 		});
 		</script>
 

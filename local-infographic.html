@@ -61,30 +61,30 @@
 
 
 
-<div class="container container-lead ">
+<div class="container container-lead infographic-container">
 	<div class="row">
-			<div class="col-sm-5 text-center">
+			<div class="col-sm-5 text-center hidden-mobile">
+				<img src="assets/img/figure_1.png" class="temp_figure">
 			</div>
 			<div class="col-sm-7">
 				<h2 class="gamma">Weighing the Options</h2>
 				<p>In the first phase, students will have all the options to consider. They've got a ways to go before the next phase of readiness, but that's not a problem. They should be careful not to skip steps and run too quickly...</p>
-				
-
-
-				<div id="tabs">
+				<div class="tabs">
 				  <ul>
 				    <li><a href="#tabs-1">Graph 1</a></li>
 				    <li><a href="#tabs-2">Graph 2</a></li>
 				    <li><a href="#tabs-3">Graph 3</a></li>
 				  </ul>
-				  <div id="tabs-1">
+				  <div id="tabs-1" class="tabbed-content">
 				  	<!-- container for the chart to be rendered in -->
+				  	<h4 class="subheading">The younger the better to reap the benefits of an MBA.</h4>
+				  	<p>Those 24 and under who earn an MBA will see a 137% increase in salary three years after earning the degree. Those 31 and over will see just a 63% increase.
 				  	<div id="wo-reap-benefits"></div>
 				  </div>
-				  <div id="tabs-2">
+				  <div id="tabs-2" class="tabbed-content">
 				    <p>Another Chart</p>
 				  </div>
-				  <div id="tabs-3">
+				  <div id="tabs-3" class="tabbed-content">
 				    <p>Another Chart</p>
 				  </div>
 				</div>
@@ -94,26 +94,94 @@
 </div>
 
 
-<div class="container container-lead ">
+<div class="container container-lead infographic-container">
 	<div class="row">
 			<div class="col-sm-7">
 				<h2 class="gamma">Plotting the Path</h2>
 				<p>Students in phase two know they want a future. They also know how long the road is. To get to the next phase of readiness, they have to start making choices.</p>
+					
+				<div class="tabs">
+					<ul>
+						<li><a href="#tabs-4">Graph 1</a></li>
+						<li><a href="#tabs-5">Graph 2</a></li>
+						<li><a href="#tabs-6">Graph 3</a></li>
+					</ul>
+					<div id="tabs-4" class="tabbed-content">						
+						<h4 class="subheading">An MBA still represents the degree of choice among all career goal types – averaging 51.6% amongst prospective business students.</h4>
+						<div id="pp-career-goals"></div>
+					</div>
+					<div id="tabs-5" class="tabbed-content">
+						Another Graph
+					</div>
+					<div id="tabs-6" class="tabbed-content">
+						Another Graph
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-5 text-center">
+			<div class="col-sm-5 text-center hidden-mobile">
+				<img src="assets/img/figure_2.png" class="temp_figure">
 			</div>
 	</div>
 </div>
 
 
-<div class="container container-lead ">
+<div class="container container-lead infographic-container">
 	<div class="row">
-			<div class="col-sm-5 text-center">
+		<div class="col-sm-5 text-center hidden-mobile">
+			<img src="assets/img/figure_3.png" class="temp_figure">
+		</div>
+		<div class="col-sm-7">
+			<h2 class="gamma">On the Move</h2>
+			<p>People in this phase are knocking on the door to school. They know from experience what they want to study and why they want to be in business....</p>
+			<div class="tabs">
+				<ul>
+					<li><a href="#tabs-7">Graph 1</a></li>
+					<li><a href="#tabs-8">Graph 2</a></li>
+					<li><a href="#tabs-9">Graph 3</a></li>
+				</ul>
+				<div id="tabs-7" class="tabbed-content">
+					<h4 class="subheading">Top resources that impact school choices:</h4>
+					<div id="om_resources"></div>
+				</div>
+				<div id="tabs-8" class="tabbed-content">
+					
+					<div class="slider-tabs">
+						<div class="slider-tabs-left">
+							<ul>
+								<li><a href="#slider-1" data-slider="0">Increase Job Opprotunities</a></li>
+								<li><a href="#slider-2" data-slider="1">Increase Salary Position</a></li>
+								<li><a href="#slider-3" data-slider="2">Accelerate Careers</a></li>
+							</ul>
+						</div>
+						<div class="slider-tabs-right-container">
+							<div class="slider-tabs-right">
+								<div id="slider-1" class="slide">
+									test
+									<div id="om_compare_1"></div>
+								</div>
+								<div id="slider-2" class="slide">
+									test
+									<div id="om_compare_2"></div>
+								</div>
+								<div id="slider-3" class="slide">
+									test
+									<div id="om_compare_3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+				</div>
+				<div id="tabs-9" class="tabbed-content">
+					Another Graph
+				</div>
 			</div>
-			<div class="col-sm-7">
-				<h2 class="gamma">On the Move</h2>
-				<p>People in this phase are knocking on the door to school. They know from experience what they want to study and why they want to be in business....</p>
-			</div>
+		</div>
 	</div>
 </div>
 
@@ -201,10 +269,19 @@
 
 
 <script>
+$(function() {
+	$('.slider-tabs-left').find('a').click(function(e) {
+		pos = $(this).attr('data-slider');
+		console.log(pos);
+		num = pos*100;
+		$('.slider-tabs-right').animate({"margin-left":-num+"%"},500);
+		e.preventDefault();
+	})
 
+});
 
  $(function() {
-    $( "#tabs" ).tabs();
+    $( ".tabs" ).tabs();
   });
 	
 //MAP TOOLTIPS SCRIPT
@@ -253,9 +330,11 @@ $(tooltipNum).qtip({
 
 
 <script src="assets/_external-js/Highcharts/js/highcharts.js"></script>
+<script src="assets/_external-js/Highcharts/js/modules/treemap.js"></script>
 <script type="text/javascript" src="assets/js/charts/wo_reap_benefits.js"></script>
-
-
+<script type="text/javascript" src="assets/js/charts/pp_career_goals.js"></script>
+<script type="text/javascript" src="assets/js/charts/om_resources.js"></script>
+<script type="text/javascript" src="assets/js/charts/om_compare.js"></script>
 
 
 <!-- end content-->

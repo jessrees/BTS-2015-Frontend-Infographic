@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="../assets/_external-css/fonts.css">
 	<!-- Stylesheet for infographics -->
 		<link rel="stylesheet" type="text/css" href="../assets/css/infographic-style.css" />
+	<!-- Stylesheet for charts --> 
+		<link rel="stylesheet" href="../assets/css/data-vis.css">
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,13 +39,17 @@
 		        tooltip: {
 		            pointFormat: '<b>{point.percentage:.0f}%</b>'
 		        },
+		        credits: {
+		        	enabled: false
+		        },
 		        plotOptions: {
 		            pie: {
 		                allowPointSelect: true,
 		                cursor: 'pointer',
 		                dataLabels: {
+		                	defer: false,
 		                    enabled: true,
-		                    format: '<b>{point.name}</b><br><span style="font-size: 3.5em; ">{point.percentage:.0f}%</span>',
+		                    format: '<span class="datalabels"><b>{point.name}</b><br><span style="font-size: 3.5em; ">{point.percentage:.0f}%</span></span>',
 		                    style: {
 		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
 		                        fontFamily: '"FacitWeb", "lucida grande", sans-serif',
@@ -55,6 +61,10 @@
 		        series: [{
 		            name: "Career Goals",
 		            colorByPoint: true,
+		            animation: {
+		                duration: 1500,
+		                easing: 'easeInOutBack'
+		            },
 		            data: [{
 		                name: "Enhance existing career",
 		                y: 34

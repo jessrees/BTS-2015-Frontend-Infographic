@@ -1,36 +1,42 @@
 $(function () {
-	Highcharts.setOptions({
-		colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
-	});
+    Highcharts.setOptions({
+        colors: ['#1e6ba6']
+    });
     $('#wo-reap-benefits').highcharts({
         chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'The Younger the Better to Reap the Benefits of an MBA'
-        },
-        subtitle: {
-            text: 'Source: Financial Times'
-        },
-        xAxis: {
-            categories: [
-                '24 & Under',
-                '25-26',
-                '27-28'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: '% of Increase after 3 years'
-            }
+            type: 'column',
+            height: 300,
+            margin: 0,
+            padding: 0
         },
         credits: {
             enabled: false,
         },
+        title: {
+            text: null
+        },
+        xAxis: {
+            height: 250,
+            categories: [
+                '24 Years Old & Under',
+                '25-26 Years Old',
+                '27-28 Years Old'
+            ],
+            crosshairs: false
+        },
+        yAxis: {
+            min: 0,
+            height: 250,
+            title: {
+                text: '% of Increase after 3 years'
+            },
+            gridLineWidth: 0,
+            labels: {
+                enabled: false,
+            }
+        },
         tooltip: {
-            enabled: false,
+            enabled: false
         },
         plotOptions: {
             column: {
@@ -39,30 +45,46 @@ $(function () {
                 groupPadding: .05,
                 colorByPoint: true,
                 states: {
+                    normal: {
+                        animation: true,
+                    },
                     hover: {
-                    	brightness: -0.1,
-                    	borderColor: 'red'                                                          
+                        brightness: -0.1,
+                        borderColor: 'red',
+                        animation: {
+                            enabled: true,
+                            duration: 1000,
+                        }                                                
                     }
                 }
             }
         },
         series: [{
-        	showInLegend: false,
+            showInLegend: false,
             data: [137, 110, 89],
+            cursor: 'pointer',
+            animation: {
+                duration: 2010,
+                easing: 'easeOutExpo'
+            },
             dataLabels: {
-	            enabled: true,
-	            color: '#FFFFFF',
-	            align: 'center',
-	            inside: true,
-	            verticalAlign: 'bottom',
-	            format: '{point.y:.0f}%', // one decimal
-	            y: 50,
-	            style: {
-	                fontSize: '4em',
-	                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
-	                textShadow: 'none'
-	            }
-	        }
+                enabled: true,
+                color: '#FFFFFF',
+                align: 'center',
+                inside: true,
+                defer: false,
+                verticalAlign: 'bottom',
+                y: 100,
+                useHTML: true,
+                formatter: function() {
+                    return ("<span class='datalabel'>" + this.y + "%</span>");
+                },
+                style: {
+                    fontSize: '4em',
+                    fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
+                    textShadow: 'none'
+                }
+            }
         }]
     });
 });
