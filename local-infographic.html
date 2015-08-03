@@ -136,7 +136,7 @@
 			<div class="tabs">
 				<ul>
 					<li><a href="#tabs-7">Graph 1</a></li>
-					<li><a href="#tabs-8">Graph 2</a></li>
+					<li><a href="#tabs-8" class="tab-8">Graph 2</a></li>
 					<li><a href="#tabs-9">Graph 3</a></li>
 				</ul>
 				<div id="tabs-7" class="tabbed-content">
@@ -145,32 +145,25 @@
 				</div>
 				<div id="tabs-8" class="tabbed-content">
 					
-					<div class="slider-tabs">
-						<div class="slider-tabs-left">
-							<ul>
-								<li><a href="#slider-1" data-slider="0">Increase Job Opprotunities</a></li>
-								<li><a href="#slider-2" data-slider="1">Increase Salary Position</a></li>
-								<li><a href="#slider-3" data-slider="2">Accelerate Careers</a></li>
-							</ul>
-						</div>
-						<div class="slider-tabs-right-container">
-							<div class="slider-tabs-right">
-								<div id="slider-1" class="slide">
-									test
-									<div id="om_compare_1"></div>
-								</div>
-								<div id="slider-2" class="slide">
-									test
-									<div id="om_compare_2"></div>
-								</div>
-								<div id="slider-3" class="slide">
-									test
-									<div id="om_compare_3"></div>
+					
+					<div class="cycle-container">
+						<div class="cycle-control">
+
+							<div class="cycle-headers-container">
+								<div class="cycle-headers">
+									<div class="cycle-control-c"><a href="#">Increase Opprotunities</a></div>
+									<div class="cycle-control-c active"><a href="#">Increase Salary</a></div>
+									<div class="cycle-control-c"><a href="#">Accelerate Career</a></div>
 								</div>
 							</div>
+
+							<div class="cycle-control-l" data-dir="0"><a href="#">&lsaquo;</a></div>
+							<div class="cycle-control-r" data-dir="1"><a href="#">&rsaquo;</a></div>
 						</div>
 					</div>
 
+					
+					<div id="om_compare"></div>
 
 
 
@@ -269,21 +262,6 @@
 
 
 <script>
-$(function() {
-	$('.slider-tabs-left').find('a').click(function(e) {
-		pos = $(this).attr('data-slider');
-		console.log(pos);
-		num = pos*100;
-		$('.slider-tabs-right').animate({"margin-left":-num+"%"},500);
-		e.preventDefault();
-	})
-
-});
-
- $(function() {
-    $( ".tabs" ).tabs();
-  });
-	
 //MAP TOOLTIPS SCRIPT
 var tooltipNum = ['area.school1', 'area.school2', 'area.school3', 'area.school4', 'area.school5', 'area.school6', 'area.school7', 'area.school8', 'area.school9', 'area.school10', 'area.school11', 'area.school12', 'area.school13', 'area.school14', 'area.school15', 'area.school16', 'area.school17', 'area.school18', 'area.school19', 'area.school20', 'area.school21', 'area.school22', 'area.school23', 'area.school24']
 
@@ -336,6 +314,7 @@ $(tooltipNum).qtip({
 <script type="text/javascript" src="assets/js/charts/om_resources.js"></script>
 <script type="text/javascript" src="assets/js/charts/om_compare.js"></script>
 
+<script type="text/javascript" src="assets/js/cycle_script.js"></script>
 
 <!-- end content-->
 </div>
