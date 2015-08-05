@@ -1,0 +1,135 @@
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Kaplan Infographic</title>
+	<!-- Default Style Sheets -->
+		<link rel="stylesheet" href="assets/_external-css/application.css">
+		<link rel="stylesheet" href="assets/_external-css/content.css">
+		<link rel="stylesheet" href="assets/_external-css/fonts.css">
+	<!-- Stylesheet for infographics -->
+		<link rel="stylesheet" type="text/css" href="assets/css/infographic-style.css" />
+	<!-- Stylesheet for charts --> 
+		<link rel="stylesheet" href="assets/css/data-vis.css">
+	<!-- Default js -->
+		<script src="assets/_external-js/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="assets/_external-js/kaptest-min-new.js"></script>
+	
+
+</head>
+
+<style type="text/css">
+
+	
+	.reap-benefits .benefits-circles-container {
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -250px;
+		margin-top: -250px;
+	}
+	.reap-benefits  .benefits-circles {
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -250px;
+		margin-left: -250px;
+	}
+	.reap-benefits  .benefits-circles .circle {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+	}
+	.reap-benefits  .circle-largest {
+		width: 0;
+		height: 0;
+		border-radius: 50%;
+		background-color: #2ea6d5;
+		margin-left: 0;
+	}
+	.reap-benefits  .circle-medium {
+		width: 0;
+		height: 0;
+		border-radius: 50%;
+		background-color: #fac249;
+		margin-left: 0;
+	}
+	.reap-benefits  .circle-smallest {
+		width: 0;
+		height: 0;
+		border-radius: 50%;
+		background-color: #e71f53;
+		margin-left: 0;
+	}
+	.reap-benefits  .circle-num {
+		font-size: 2.5em;
+		color: #fff;
+		text-align: center;
+		margin-top: 20px;
+		font-family: "FacitWeb-semibold", "lucida grande", sans-serif;
+		opacity: 0;
+		transition: opacity linear 1s;
+		pointer-events: none;
+	}
+	.reap-benefits  .full-opacity {
+		opacity: 1;
+	}
+	.reap-benefits  .circle-smallest .circle-num {
+		margin-top: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -1em;
+		margin-left: -1em;
+	}
+	
+	.reap-benefits  .circle-min {
+		width: 0px;
+		height: 0px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.reap-benefits  .circle {
+		display: block !important;
+	}
+
+</style>
+
+
+<div class="reap-benefits">
+	<div class="benefits-circles-container">
+		 <div class="benefits-circles"> 
+			<div class="circle circle-largest">
+				<div class="circle-num">137%</div>
+			</div>
+			<div class="circle circle-medium">
+				<div class="circle-num">110%</div>
+			</div>
+			<div class="circle circle-smallest">
+				<div class="circle-num">89%</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+	$('.circle-largest').animate({"margin-left":"-50%","height":"100%", "width":"100%"}, 600, 'easeOutQuint');
+	$('.circle-medium').delay(150).animate({"margin-left":"-40%","height":"80%", "width":"80%"}, 900, 'easeOutQuint');
+	$('.circle-smallest').delay(300).animate({"margin-left":"-30%","height":"60%", "width":"60%"}, 1200, 'easeOutQuint');
+
+	$(function() {
+		$('.circle-num').addClass('full-opacity');
+	});
+</script>
+
+

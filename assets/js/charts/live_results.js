@@ -6,7 +6,7 @@ $(function () {
         chart: {
             type: 'column',
             width: 130,
-            height: 500,
+            height: 450,
             marginTop: 50,
             backgroundColor:'rgba(255, 255, 255, 0)'
         },
@@ -52,7 +52,7 @@ $(function () {
         },
         series: [{
         	showInLegend: false,
-            data: [{y: 30, color: '#ea1850'}],
+            data: [{y: 50, color: '#ea1850', dataLabels: {x: 0, y: 0}}],
             cursor: 'pointer',
             animation: {
                 duration: 1000,
@@ -62,11 +62,9 @@ $(function () {
 	            enabled: true,
 	            color: '#ea1850',
 	            align: 'center',
-	            inside: false,
-	            defer: false,
-	            verticalAlign: 'bottom',
-	            format: '{point.y:.0f}%', // one decimal
-	            y: 0,
+                defer: false,
+                verticalAlign: 'bottom',
+                format: '{point.y:.0f}%', // one decimal
 	            style: {
 	                fontSize: '3em',
 	                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
@@ -80,7 +78,7 @@ $(function () {
         chart: {
             type: 'column',
             width: 130,
-            height: 500,
+            height: 450,
             marginTop: 50,
             backgroundColor:'rgba(255, 255, 255, 0)'
         },
@@ -90,7 +88,7 @@ $(function () {
         xAxis: {
             crosshair: false,
             labels: {
-            	enabled: false
+            	enabled: false,
             }
         },
         yAxis: {
@@ -126,7 +124,7 @@ $(function () {
         },
         series: [{
         	showInLegend: false,
-            data: [50],
+            data: [{y: 87, color: '#24a6d8', dataLabels: {x: 0, y: -60}}],
             cursor: 'pointer',
             animation: {
                 duration: 1000,
@@ -136,11 +134,10 @@ $(function () {
 	            enabled: true,
 	            color: '#24a6d8',
 	            align: 'center',
-	            inside: false,
-	            defer: false,
-	            verticalAlign: 'bottom',
-	            format: '{point.y:.0f}%', // one decimal
-	            y: 0,
+                defer: false,
+                verticalAlign: 'bottom',
+                format: '{point.y:.0f}%', // one decimal
+                y: -50,
 	            style: {
 	                fontSize: '3em',
 	                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
@@ -155,7 +152,7 @@ $(function () {
 	        chart: {
 	            type: 'column',
 	            width: 130,
-	            height: 500,
+	            height: 450,
 	            marginTop: 50,
 	            backgroundColor:'rgba(255, 255, 255, 0)'
 	        },
@@ -177,7 +174,11 @@ $(function () {
 	            }, 
 	            labels: {
 	            	enabled: false
-	            }
+	            },
+                stackLabels: {
+                    enabled: true,
+                    verticalAlign: 'top'
+                }
 	        },
 	        credits: {
 	        	enabled: false
@@ -201,7 +202,7 @@ $(function () {
 	        },
 	        series: [{
 	        	showInLegend: false,
-	            data: [{y: 20, color: '#fbc33a'}],
+	            data: [{y: 50, color: '#fbc33a', dataLabels: {x: 0, y: -0}}],
 	            cursor: 'pointer',
 	            animation: {
 	                duration: 1000,
@@ -211,11 +212,9 @@ $(function () {
 		            enabled: true,
 		            color: '#fbc33a',
 		            align: 'center',
-		            inside: false,
 		            defer: false,
 		            verticalAlign: 'bottom',
 		            format: '{point.y:.0f}%', // one decimal
-		            y: 0,
 		            style: {
 		                fontSize: '3em',
 		                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
@@ -227,7 +226,9 @@ $(function () {
 
 
 		
-
+        chart1 = $('#gathering_intelligence').highcharts();
+        chart2 = $('#plotting_path').highcharts();
+        chart3 = $('#on_the_move').highcharts();
 
 
 

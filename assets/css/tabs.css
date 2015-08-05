@@ -1,0 +1,132 @@
+.tab-section {
+	width: 100%;
+
+}
+.flex-test {
+	display: flex;
+	width: 100%;
+	height: 460px;
+	flex-flow: row wrap;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+
+.tab {
+	float: left;
+	width: 33.3%;
+	background-color: #ddd;
+	text-align: center;
+	height: 40px;
+}
+.tab a {
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+}
+.arrow {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 40px;
+	width: 0; 
+	height: 0;
+	left: 50%;
+	margin-left: -10px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #1d2172;
+}
+.tab.active {
+	background-color: #1d2172;
+}
+.tab.active a {
+	color: #fff;
+}
+
+.section {
+	position: absolute;
+	top: 0;
+}
+.section-1, .section-3,
+.section-5,
+.section-6, .section8 {
+	left: 100%;
+}
+.section-2,
+.section-4,
+.section-7 {
+	left: 0;
+}
+
+.section {
+	width: 100%;
+	display: none;
+	margin-top: 80px;
+}
+.active-content {
+	display: block;
+}
+
+@media screen and (max-width: 768px) {
+	.container-lead {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+	.arrow {
+		display: none;
+	}
+	.tab {
+		position: relative;
+	}
+	.tab.active:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0px;
+		width: 0; 
+		height: 0;
+		left: 50%;
+		margin-left: -10px;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #1d2172;
+		margin-top: 40px;
+	}
+	
+	.highcharts-container {
+		font-size: 5px;
+	}
+
+	.flex-test, .infographic-container {
+		height: auto !important;
+	}
+	.section {
+		left: 0;
+		position: static;
+		margin-top: 25px;
+		height: auto;
+		margin-bottom: 50px;
+	}
+	.tab-1 {
+		order: 1;
+	}
+	.section-1 {
+		order: 2;
+	}
+	.tab-2 {
+		order: 3;
+	}
+	.section-2 {
+		order: 4;
+	}
+	.tab-3 {
+		order: 5;
+	}
+	.section-3 {
+		order: 6;
+	}
+	.tab {
+		width: 100%;
+	}
+}
