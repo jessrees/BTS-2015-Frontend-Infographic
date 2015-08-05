@@ -25,7 +25,7 @@ $(function () {
                 dataLabels: {
                 	defer: false,
                     enabled: true,
-                    format: '<span class="datalabels"><b>{point.name}</b><br><span style="font-size: 3.5em; ">{point.percentage:.0f}%</span></span>',
+                    format: '<span class="datalabels"><b>{point.name}</b><br><span style="font-size: 2.5em; ">{point.percentage:.0f}%</span></span>',
                     style: {
                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
                         fontFamily: '"FacitWeb", "lucida grande", sans-serif',

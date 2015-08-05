@@ -45,7 +45,9 @@ $(function() {
 			arrowPos = width-subtract;
 
 			// animate the arrow position for the group only 
-			group.find('.arrow').animate({"left":arrowPos+"%"}, 500);
+			group.find('.arrow').animate({"left":arrowPos+"%"}, {duration: 500, queue: false});
+			// make arrow gray 
+			group.find('.arrow').css({"border-top-color":"#eee"}).animate({"border-top-color":"#1d2172"}, {duration: 800, queue: false});
 
 
 			// what was the previous tab?

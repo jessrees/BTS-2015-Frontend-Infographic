@@ -393,6 +393,11 @@ License: MIT
      *
      * @param commandArgument - Some commands (like 'value') may require an argument
      */
+
+     
+
+
+     
     $.fn.circleProgress = function(configOrCommand, commandArgument) {
         var dataName = 'circle-progress',
             firstInstance = this.data(dataName);

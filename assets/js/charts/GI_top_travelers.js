@@ -69,7 +69,7 @@ $(function () {
 	            format: '{point.y:.0f}%', // one decimal
 	            y: 50,
 	            style: {
-	                fontSize: '4em',
+	                fontSize: '2.5em',
 	                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
 	                textShadow: 'none'
 	            }

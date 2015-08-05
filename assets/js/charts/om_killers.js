@@ -46,7 +46,7 @@ $(function () {
                     groupPadding: 0,
                     style: {
                         textShadow: 'none',
-                        fontSize: '4em',
+                        fontSize: '1.5em',
                         fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
                     },
                 }

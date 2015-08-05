@@ -37,6 +37,9 @@
 	border-right: 10px solid transparent;
 	border-top: 10px solid #1d2172;
 }
+.gray-arrow {
+	border-top-color: #ddd;
+}
 .tab.active {
 	background-color: #1d2172;
 }
@@ -92,6 +95,7 @@
 		border-right: 10px solid transparent;
 		border-top: 10px solid #1d2172;
 		margin-top: 40px;
+		transition: border linear .2s;
 	}
 	
 	.highcharts-container {

@@ -222,6 +222,26 @@
 	draw4();
 	draw5();
 
+
+
+	(function() {
+
+	  canvas = $('canvas'); 
+
+	  canvas.on('mouse:over', function(e) {
+	    e.target.setFill('red');
+	    canvas.renderAll();
+	  });
+
+	  canvas.on('mouse:out', function(e) {
+	    e.target.setFill('green');
+	    canvas.renderAll();
+	  });
+
+	})();
+
+
+
 	function draw1() {
 		setTimeout(function(){
 			$('.circle-1, .circle-2').removeClass('circle-hidden');
