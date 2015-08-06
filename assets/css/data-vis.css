@@ -7,6 +7,9 @@
 
 
 /* CONTROL OVER DATA CHARTS */
+.highcharts-container {
+	margin: 0 auto;
+}
 .highcharts-data-labels {
 	pointer-events: none;
 }
@@ -258,113 +261,91 @@
 
 
 /* TOP RESOURCES */
-.top_resources {
-	zoom: .65;
-	margin-top: 550px;
+.outter_circle #inner-circle {
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+    margin: 0 auto;
 }
-.top_resources .circle {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 1;
-	transition: opacity linear 1s;
+.outter_circle #inner-circle svg path {
+    transition: all linear .2s;
+    pointer-events: stroke;
 }
-.top_resources .circle-hidden {
-	opacity: 0;
-	transition: opacity linear 1s;
+.outter_circle #inner-circle svg path:nth-of-type(even):hover {
+    stroke: #adbf45;
+    cursor: pointer;
 }
-.top_resources .circle-container {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -250px;
-	margin-left: -250px;
-	height: 500px;
-	width: 500px;
-	transform: rotate(90deg);
+.outter_circle #inner-circle svg path:nth-of-type(odd):hover {
+    stroke: #2a95bf;
+    cursor: pointer;
 }
-.top_resources .circle-2 {
-	top: 15px;
-	left: 15px;
-}
-.top_resources .circle-3 {
-	top: 50px;
-	left: 50px;
-}
-.top_resources  .circle-4 {
-	top: 65px;
-	left: 65px;
-}
-.top_resources .circle-5 {
-	top: 100px;
-	left: 100px;
-}
-.top_resources .circle-6 {
-	top: 115px;
-	left: 115px;
-}
-.top_resources .circle-7 {
-	top: 150px;
-	left: 150px;
-}
-.top_resources .circle-8 {
-	top: 165px;
-	left: 165px;
-}
-.top_resources .circle-9 {
-	top: 200px;
-	left: 200px;
-}
-.top_resources .circle-10 {
-	top: 215px;
-	left: 215px;
-}
-.top_resources .circle-bg {
-	position: absolute;
-	top: -50px;
-	left: -50px;
-	width: 600px;
-	height: 600px;
-	transform: rotate(-90deg);
-}
-.top_resources .circle-legend {
-	position: absolute;
-    right: -75px;
-    bottom: -20px;
-}
-.top_resources .legend-box {
-	width: 20px;
-	height: 20px;
-	margin-bottom: 80px;
-	position: relative;
-	bottom: -150px;
-	left: 25px;
-}
-.top_resources .circle-legend span {
-	display: block;
-	transform: rotate(-90deg);
-}
-.top_resources .legend-box-1 {
-	background-color: #22A5D7;
-}
-.top_resources .legend-box-2 {
-	background-color: #C0D43B;
-}
+.outter_circle .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    background-color: rgba(255,255,255, .8);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #000;
+    line-height: 22px;
+    text-align: left;
 
-.top_resources .circle-labels {
-	display: block;
-	transform: rotate(-90deg);
-	position: absolute;
-	top: 210px;
-    left: 60px;
+}
+.outter_circle .circle-labels {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 32%;
     transition: all linear .5s;
 }
-.top_resources .circle-labels span {
-	display: block;
-	height: 50px;
-	text-align: right;
+.outter_circle .circle-labels span {
+    display: block;
+    height: 47px;
+    text-align: right;
 }
+.outter_circle .circle-bg-container {
+    width: 530px;
+    height: 530px;
+    position: absolute;
+    top: -16px;
+    left: -21px;
+    pointer-events: none;
+    z-index: -1;
+}
+.outter_circle {
+	zoom: .75;
 
+}
+.top_resources_legend {
+	width: 300px;
+	position: absolute;
+	top: -10px;
+	left: 0;
+}
+.top_resources_legend div {
+	float: left;
+}
+.top_resources_legend p {
+	zoom: .75;
+}
+.top_resources_legend .box_1 {
+	background-color: #2ea6d5;
+	width: 15px;
+	height: 15px;
+	margin-right: 3px;
+	position: relative;
+	top: 15px;
+}
+.top_resources_legend .box_2 {
+	background-color: #c0d44c;
+	width: 15px;
+	height: 15px;
+	margin-right: 3px;
+	position: relative;
+	top: 0px;
+}
 
 
 
@@ -373,6 +354,92 @@
 	.hidden-mobile {
 		display: none;
 	}
+	.reap-benefits {
+		zoom: 0;
+		margin-top: auto;
+		margin-left: auto;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 210px;
+		padding-bottom: 50px;
+	}
+	.reap-benefits .benefits-circles-container {
+		width: 300px;
+		height: 300px;
+		position: static;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.reap-benefits .benefits-circles {
+		width: 300px;
+		height: 300px;
+	}
+	.reap-benefits .benefits-circles {
+		position: relative;
+		margin-left: auto;
+		margin-top: auto;
+		width: 300px;
+		height: 300px;
+		left: 0;
+		top: 0;
+	}
+	.reap-benefits-legend {
+		width: 100%;
+		position: relative;
+		top: 340px;
+	}
+	.reap-benefits-legend span {
+		display: inline-block;
+		margin-right: 10px;
+		margin-left: 5px;
+	}
+	.reap-benefits .circle-num {
+		font-size: 2em;
+	}
+	#om_compare .highcharts-container {
+		font-size: 1px !important;
+	}
+
+
+
+	.outter_circle {
+		zoom: 0;
+		width: 300px;
+		height: 300px;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+	.top_resources_legend {
+		top: 0;
+		margin-top: 50px;
+	}
+	.outter_circle .circle-labels {
+		/*display: none;*/
+		font-size: 10px !important;
+		top: 115px;
+    	left: 66px;
+	}
+	.outter_circle .circle-labels span {
+	    display: block;
+	    height: 29px;
+	    text-align: right;
+	}
+
+	.outter_circle .circle-bg-container {
+		top: 0;
+		left: 0;
+	}
+	.outter_circle .circle-bg-container {
+		width: 100%;
+	}
+	.outter_circle #inner-circle {
+		margin: 0 auto;
+		width: 300px;
+		height: 300px;
+	}
+
+
+
 }
 
 

@@ -6,9 +6,8 @@ $(function () {
     $('#om_killers').highcharts({
         chart: {
             type: 'bar',
-            spacingBottom: 50,
-            margin: [0, 0, 0, 0],
-            padding: 0
+            margin: [0,0,0,0],
+            height: 200,
         },
         title: {
             text: null,
@@ -40,6 +39,7 @@ $(function () {
         plotOptions: {
             bar: {
                 stacking: 'normal',
+                width: 200,
                 dataLabels: {
                     enabled: true,
                     format: '{point.y:.0f}%', 
@@ -53,6 +53,7 @@ $(function () {
             }
         },
         legend: {
+            enabled: false,
             layout: 'horizontal',
             align: 'center',
             verticalAlign: 'bottom',

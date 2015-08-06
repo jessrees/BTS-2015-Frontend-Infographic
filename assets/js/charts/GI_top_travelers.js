@@ -7,10 +7,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'The Top Travelers'
-        },
-        subtitle: {
-            text: 'Source: MBA.com Prospective Students Survey March 2015 p. 11'
+            text: null
         },
         xAxis: {
             categories: [
@@ -69,7 +66,7 @@ $(function () {
 	            format: '{point.y:.0f}%', // one decimal
 	            y: 50,
 	            style: {
-	                fontSize: '2.5em',
+	                fontSize: '2em',
 	                fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
 	                textShadow: 'none'
 	            }

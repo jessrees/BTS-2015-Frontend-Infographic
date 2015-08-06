@@ -2,9 +2,38 @@ $(function() {
 
 	mobile = 768;
 
+
+	if($(window).width() <= mobile) {
+		$('#pp_programs').highcharts().destroy();
+		$('#gi_work_mba').highcharts().destroy();
+		responsive();
+		workResponsive();
+	}
+
+
+	$(window).resize(function() {
+		if($(window).width() <= mobile) {
+			$('#pp_programs').highcharts().destroy();
+			$('#gi_work_mba').highcharts().destroy();
+			responsive();
+			workResponsive();
+		}
+	});
+
+	$('.tab').each(function() {
+		$(this).append('<div class="content-expand expand">+</div>');
+		if($(this).hasClass('active')) {
+			$(this).find('.content-expand').text('–').removeClass('expand').addClass('close-dash');
+		}
+	})
+
 	$('.flex-test').each(function() {
 
+
 		if($(window).width() > mobile) {
+
+			$('.content-expand').css({"display":"none"});
+
 			// get the amount of tabs in each group
 			tabs = $(this).find('.tab').length;
 
@@ -27,8 +56,16 @@ $(function() {
 
 	$('.tab').find('a').click(function(e) {
 
+		// $(window).resize();
+		setTimeout(function () {
+    		$(window).trigger('resize');
+		}, 1);
+
+
+
 		// IF NOT MOBILE 
 		if($(window).width() > mobile) {
+
 			// get which group of tabs the clicked tab is in
 			groupId = $(this).parent().parent().attr('data-group');
 			group = $(this).parent().parent();
@@ -78,10 +115,12 @@ $(function() {
 			if($(this).parent().hasClass('active')) {
 				$(this).parent().removeClass('active');
 				group.find('.section-'+clickedTab).removeClass('active-content').removeClass('active');
+				$(this).parent().find('.content-expand').text('+').addClass('expand').removeClass('close-dash');
 			} else {
 				$(this).parent().addClass('active');
 				group.find('.section').removeClass('active');
 				group.find('.section-'+clickedTab).addClass('active-content').addClass('active');
+				$(this).parent().find('.content-expand').text('–').removeClass('expand').addClass('close-dash');
 			}
 		}
 

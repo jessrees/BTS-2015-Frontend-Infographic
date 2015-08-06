@@ -63,7 +63,7 @@ $(function () {
                 format: '{point.y:.0f}%', // one decimal
                 y: 20,
                 style: {
-                    fontSize: '2.5em',
+                    fontSize: '1.75em',
                     fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
                     textShadow: 'none'
                 }

@@ -71,6 +71,21 @@
 	display: block;
 }
 
+.content-expand {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	font-size: 20px;
+	color: #000;
+	line-height: 40px;
+}
+.close-dash {
+	color: #fff;
+	opacity: 1;
+	font-weight: bold;
+	right: 22px;
+}
+
 @media screen and (max-width: 768px) {
 	.container-lead {
 		padding-bottom: 0;
