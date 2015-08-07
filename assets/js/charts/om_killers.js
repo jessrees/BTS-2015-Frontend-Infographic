@@ -1,16 +1,20 @@
 $(function () {
+
     Highcharts.setOptions({
-        colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+        colors: ['#2ea6d5', '#e71f53', '#fac249', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
     });
 
     $('#om_killers').highcharts({
         chart: {
             type: 'bar',
-            margin: [0,0,0,0],
-            height: 200,
+            spacingBottom: 50,
+            marginTop: -10,
+            marginLeft: 0,
+            marginRight: 0,
+            backgroundColor: null
         },
         title: {
-            text: null,
+            text: null
         },
         xAxis: {
             title: {
@@ -23,6 +27,7 @@ $(function () {
         yAxis: {
             min: 0,
             ceiling: 90,
+            height: 200,
             gridLineWidth: 0,
             title: {
                 text: null
@@ -34,34 +39,38 @@ $(function () {
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name + ': </b>' + this.y + '%'
-            }
+            },
+            zIndex: 100001,
         },
         plotOptions: {
             bar: {
+                pointPadding: 0,
+                groupPadding: 0,
+                borderWidth: 0,
                 stacking: 'normal',
-                width: 200,
                 dataLabels: {
                     enabled: true,
-                    format: '{point.y:.0f}%', 
-                    groupPadding: 0,
                     style: {
                         textShadow: 'none',
                         fontSize: '1.5em',
+                        textIndent: '-30px',
+                        textAlign: 'center',
                         fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
                     },
+                    formatter: function () {
+                        return '<div style="margin-left: -10px; margin-top: 3px;"><span>' + this.y + '%</span></div>';
+                    },
+                    useHTML: true
                 }
             }
         },
         legend: {
-            enabled: false,
-            layout: 'horizontal',
+            layout: 'vertical',
             align: 'center',
             verticalAlign: 'bottom',
-            floating: true,
-            y: 20,
-            borderWidth: 1,
-            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-            shadow: false
+            floating: false,
+            shadow: false,
+            reversed: true
         },
         credits: {
             enabled: false

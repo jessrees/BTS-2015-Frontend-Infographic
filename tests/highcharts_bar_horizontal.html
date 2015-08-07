@@ -29,13 +29,12 @@ $(function () {
         chart: {
             type: 'bar',
             spacingBottom: 50,
-            margin: [0, 0, 0, 0] 
+            marginTop: -10,
+            marginLeft: 0,
+            marginRight: 0,
         },
         title: {
-            text: 'The Top 3 Application Killers'
-        },
-        subtitle: {
-            text: 'Source: Kaplan Test Prep 2014 Survey of Business School Admissions Officers'
+            text: null
         },
         xAxis: {
             title: {
@@ -48,6 +47,7 @@ $(function () {
         yAxis: {
             min: 0,
             ceiling: 90,
+            height: 200,
             gridLineWidth: 0,
             title: {
                 text: null
@@ -63,16 +63,23 @@ $(function () {
         },
         plotOptions: {
             bar: {
+                pointPadding: 0,
+                groupPadding: 0,
+                borderWidth: 0,
                 stacking: 'normal',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.y:.0f}%', 
-                    groupPadding: 0,
                     style: {
                         textShadow: 'none',
-                        fontSize: '4em',
+                        fontSize: '2.5em',
+                        textIndent: '-30px',
+                        textAlign: 'center',
                         fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
                     },
+                    formatter: function () {
+                        return '<div style="margin-left: -10px; margin-top: 3px;"><span>' + this.y + '%</span></div>';
+                    },
+                    useHTML: true
                 }
             }
         },
@@ -80,11 +87,9 @@ $(function () {
             layout: 'horizontal',
             align: 'center',
             verticalAlign: 'bottom',
-            floating: true,
-            y: 20,
-            borderWidth: 1,
-            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-            shadow: false
+            floating: false,
+            shadow: false,
+            reversed: true
         },
         credits: {
             enabled: false
@@ -104,7 +109,7 @@ $(function () {
 		</script>
 	</head>
 	<body>
-        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        <div id="container" style="min-width: 310px; height: 200px; margin: 0 auto"></div>
 
 
 

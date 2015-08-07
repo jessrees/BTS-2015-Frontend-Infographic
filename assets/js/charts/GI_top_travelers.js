@@ -1,10 +1,11 @@
 $(function () {
 	Highcharts.setOptions({
-	    colors: ['#1e6ba6']
+	    colors: ['#2ea6d5', '#ef7939', '#fac249', '#e71f53', '#fac249']
 	});
     $('#gi_top_travelers').highcharts({
         chart: {
-            type: 'column'
+            type: 'column',
+            backgroundColor: null
         },
         title: {
             text: null

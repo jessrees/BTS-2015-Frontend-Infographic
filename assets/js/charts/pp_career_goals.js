@@ -1,12 +1,13 @@
 $(function () {
     Highcharts.setOptions({
-        colors: ['#1e6ba6', '#e71f53', '#4ea74c', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+        colors: ['#2ea6d5', '#e71f53', '#fac249', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
     });
     $('#pp-career-goals').highcharts({
         chart: {
             type: 'column',
             padding: 0,
-            height: 300
+            height: 300,
+            backgroundColor: null
         },
         title: {
             text: null
@@ -20,7 +21,7 @@ $(function () {
                 'Career Switcher',
                 'Aspiring Entrepreneur'
             ],
-            crosshair: true
+            crosshair: false
         },
         yAxis: {
             min: 0,

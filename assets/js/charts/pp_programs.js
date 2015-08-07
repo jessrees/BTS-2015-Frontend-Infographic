@@ -8,6 +8,7 @@ $(function () {
             plotBorderWidth: null,
             plotShadow: false,
             type: 'pie',
+            backgroundColor: null
         },
         title: {
             text: null

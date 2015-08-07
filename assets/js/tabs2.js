@@ -1,35 +1,5 @@
-$(function() {
-
-	mobile = 768;
-
-
-	if($(window).width() <= mobile) {
-		$('#pp_programs').highcharts().destroy();
-		$('#gi_work_mba').highcharts().destroy();
-		responsive();
-		workResponsive();
-	}
-
-
-	$(window).resize(function() {
-		if($(window).width() <= mobile) {
-			$('#pp_programs').highcharts().destroy();
-			$('#gi_work_mba').highcharts().destroy();
-			responsive();
-			workResponsive();
-		}
-	});
-
-	$('.tab').each(function() {
-		$(this).append('<div class="content-expand expand">+</div>');
-		if($(this).hasClass('active')) {
-			$(this).find('.content-expand').text('–').removeClass('expand').addClass('close-dash');
-		}
-	})
-
+var tabSizer = function() {
 	$('.flex-test').each(function() {
-
-
 		if($(window).width() > mobile) {
 
 			$('.content-expand').css({"display":"none"});
@@ -53,10 +23,68 @@ $(function() {
 			$(this).find('.arrow').stop().animate({"left":arrowPos+"%"}, 500);
 		}
 	})
+}
+
+var expandIcon = function() {
+	$('.tab').each(function() {
+		$(this).append('<div class="content-expand expand">+</div>');
+		if($(this).hasClass('active')) {
+			$(this).find('.content-expand').text('–').removeClass('expand').addClass('close-dash');
+		}
+	})
+}
+
+$(function() {
+
+	mobile = 768;
+
+
+	// on init, change which chart displays
+	// this should be detected BEFORE any  charts are rendered
+	if($(window).width() <= mobile) {
+		if($('#pp_programs').find('svg').length) {
+			$('#pp_programs').highcharts().destroy();
+			responsive();
+		}
+	}
+
+
+	$(window).resize(function() {
+		// if mobile
+		if($(window).width() <= mobile) {
+			// reset tab widths
+			$('.tab').css({'width':'100%'});
+
+			// add expand Icon if they are not already there
+			if($('.content-expand').length == 0) {
+				expandIcon();
+			}
+
+			// update charts 
+			if($('#pp_programs').find('svg').length) {
+				$('#pp_programs').highcharts().destroy();
+				responsive();
+			}
+		} else {
+			// not mobile
+
+			// resize tabs back to correct dim
+			tabSizer();
+			// delete +/- on tabs that are used in responsive view
+			$('.content-expand').remove();
+
+		}
+	});
+
+	
+	expandIcon();
+
+	tabSizer();
 
 	$('.tab').find('a').click(function(e) {
 
-		// $(window).resize();
+
+		// hack for resizing charts when hidden :(
 		setTimeout(function () {
     		$(window).trigger('resize');
 		}, 1);
@@ -84,7 +112,7 @@ $(function() {
 			// animate the arrow position for the group only 
 			group.find('.arrow').animate({"left":arrowPos+"%"}, {duration: 500, queue: false});
 			// make arrow gray 
-			group.find('.arrow').css({"border-top-color":"#eee"}).animate({"border-top-color":"#1d2172"}, {duration: 800, queue: false});
+			group.find('.arrow').animate({"border-top-color":"#1d2172"}, {duration: 800, queue: false});
 
 
 			// what was the previous tab?
