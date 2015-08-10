@@ -5,9 +5,70 @@
 	height: 100%;
 }
 
+.temp_header, .temp_footer {
+	padding: 0;
+}
+.temp_header img, .temp_footer img {
+	width: 100%;
+}
+
+
+.clear_margin {
+	margin-top: 50px;
+}
+
+.tools_section ul {
+	padding: 0;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+.tools_section ul li {
+	margin-left: 20px;
+}
+.tools_section i {
+	font-size: 1em;
+	font-weight: 600;
+}
+.tools_section .row {
+	margin: 0;
+}
+.checklist {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.checklist li {
+	padding-left: 25px;
+	background-image: url('../img/checklist_purple.svg');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: left center;
+	margin: 5px 0 !important;
+}
+
+
+.btn {
+	background-color: #2badd9;
+	width: 230px;
+	padding: 10px 0;
+	text-align: center;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: all linear .25s;
+}
+.btn:hover {
+	background-color: #1e6ba6;
+	color: #fff;
+	transition: all linear .25s;
+}
+
 
 .bucket-section {
 	background-color: #f8f8f8;
+}
+.purple {
+	color: #1e0576;
 }
 .dark_blue {
 	color: #1e6ba6;
@@ -154,6 +215,27 @@ hr {
 }
 
 
+.round {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #f8f8f8;
+	margin: 0 auto;
+}
+.expand_infographics {
+	position: relative;
+	top: -25px;
+}
+.expand_infographics img {
+	height: 25px;
+	transform: rotate(-90deg);
+	position: relative;
+	top: 10px;
+}
+.expand_infographics .flipped {
+	transform: rotate(90deg);
+}
+
 
 .short_line {
 	margin: 0 auto;
@@ -262,7 +344,11 @@ hr {
 
 
 
-
+.download_guide {
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
 
 
 
@@ -644,14 +730,15 @@ hr {
 .map_background {
 	background-color: #cfe9f1;
 	padding: 0;
+	height: 420px;
 }
 .map_container {
 	width: 100%;
-	height: 600px;
+	height: 420px;
 	background-color: #cfe9f1;
 }
 .map {
-	width: 80%;
+	width: 67%;
 	display: block;
 	margin: 0 auto;
 }
@@ -727,13 +814,15 @@ hr {
 
 /* TIME LINE */
 .day_in_life_user_container {
-	background-color: #fff;
-	height: 380px;
+	height: 440px;
 	width: 200px;
 	padding-top: 90px;
 }
 .day_in_life_user {
 	width: 200px;
+	margin-top: 77px;
+    position: relative;
+    z-index: 5;
 }
 .day_in_life_user img {
 	width: 100px;
@@ -742,32 +831,34 @@ hr {
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 30px;
+	border: 3px solid #fff;
 }
 .timeline .container-lead {
-	height: 380px;
+	height: 440px;
 	background-color: #ddd;
 	padding: 0;
 }
 .container-lead .timeline_container {
 	overflow: hidden;
-	height: 380px;
+	height: 440px;
 }
 .timeline .timeline_inner {
 	overflow: scroll;
-	height: 400px;
+	height: 440px;
 	position: relative;
+	top: 25px;
 }
 .timeline .timeline_full_width {
 	width: 4800px;
-	background: linear-gradient(to right, #f4dbd2 0%,#eff2d2 7%,#d4f1f4 24%,#cfe9f2 52%,#82b7d8 71%,#4a5170 89%,#1b242d 100%); /* W3C */
+	background: linear-gradient(to right, #f09940 0%,#efb881 11%,#3db0c7 22%,#2272b2 45%,#211770 85%,#211770 85%,#051135 94%,#041035 100%); /* W3C */
 }
 .timeline_string {
-	background-color: #858585;
+	background-color: #fff;
 	height: 3px;
-	width: 4500px;
+	width: 4090px;
 	position: absolute;
 	top: 50%;
-	left: 300px;
+	left: 120px;
 	margin-top: -1.5px;
 }
 .marker {
@@ -780,8 +871,90 @@ hr {
 	display: block;
 	font-weight: bold;
 }
+.timeline_name {
+	margin-left: 50px;
+	margin-top: -20px;
+	color: #fff;
+}
+.timeline_school {
+	width: 200px;
+	margin-left: 50px;
+	font-style: italic;
+	color: #1e0576;
+}
+.dot_container {
+	position: absolute;
+	top: 80px;
+	left: -8px;
+}
+.dot_line {
+	width: 3px;
+	background-color: #fff;
+	position: absolute;
+	left: 8px;
+	height: 20px;
+	top: -10px;
+}
+.dot {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	background-color: #1e0576;
+	border-radius: 20px;
+	z-index: 1;
+}
+.timeline .time i  {
+	margin-left: -1em;
+	font-size: 2em;
+	position: relative;
+	top: 17px;
+	left: -5px;
+}
+.timeline-animation {
+	position: absolute;
+	left: 4470px;
+	top: 0;
+	height: 100%;
+	width: 300px;
+}
 
+.stars {
+	position: absolute;
+	left: 20px;
+	top: -75px;
+	width: 300px;
+	height: 500px;
+}
+.star {
+	width: 3px;
+	height: 3px;
+	background-color: #ffc82e;
+	border-radius: 20px;
+	position: absolute;
+}
+.star:after {
+	content: "+";
+	color: #ffc82e;
+	font-size: 10px;
+	position: relative;
+	top: -6px;
+	left: -1.5px;
+}
+.z {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	color: #fff;
+	font-size: 1em;
+	opacity: 1;
+}
 
+.tools_sections {
+	display: none;
+}
+.tools_sections_inner {
+	height: 420px;
+}
 
 
 @media screen and (max-width: 768px) {

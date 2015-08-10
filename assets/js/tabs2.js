@@ -34,9 +34,68 @@ var expandIcon = function() {
 	})
 }
 
+
+
+// stars for timeline animation
+
+$(function() {
+	$('.star').each(function() {
+		start = Math.random();
+		console.log(start);
+		$(this).css({"opacity":start});
+	});
+})
+
+
+window.setInterval(function() {
+$('.star').each(function() {
+		var start = Math.random();
+		console.log(start);
+		$(this).animate({"opacity":"1"}, 500, function() {
+			$(this).animate({"opacity":start}, 500);
+		})
+	});
+
+}, 1000);
+
+
+
+
+window.setInterval(function() {
+	$('.z.z-first').each(function() {
+		$(this).animate({"font-size":"5em","bottom":"200px","opacity":"0"},3000, 'easeOutCirc', function() {
+			randomLeft = Math.random()*200;
+			randomTop = Math.random()*200;
+			$(this).css({"margin-left":-randomLeft+"px","bottom":-randomTop+"px","opacity":"1","font-size":"1em"});
+		});
+	});
+}, 1200);
+
+
+
+
+
 $(function() {
 
 	mobile = 768;
+
+
+	// not really related to tabs
+	$('.expand_infographics').click(function(e) {
+		$('.infographics').slideToggle(500);
+		$('body, html').animate({
+   	 		scrollTop: $('.infographics').position().top
+		}, 500);
+
+		if($('.expand_infographics').find('img').hasClass('flipped')) {
+			$(this).find('img').removeClass('flipped');
+		} else {
+			$(this).find('img').addClass('flipped');
+		}
+
+
+		e.preventDefault();
+	});
 
 
 	// on init, change which chart displays
@@ -156,4 +215,65 @@ $(function() {
 
 	})
 
+});
+
+
+$(function() {
+	$('.tools-section').click(function(e) {
+	
+		// get which section was clicked
+		clickedMainSection = $(this).attr('data-tools-section');
+		// get the previous section based on the current class in this group
+		previousMainSection = $('.tools_section[data-section="'+clickedMainSection+'"]').parent().find('.current').attr('data-section');
+
+		if(clickedMainSection != previousMainSection) {
+			// if not visisble, expand area
+			if(!$('.tools_section[data-section="'+clickedMainSection+'"]').parent().parent().parent().is(':visible')) {
+				$('.tools_section[data-section="'+clickedMainSection+'"]').parent().parent().parent().slideToggle(500);
+			}
+			// animate positions
+			$('.tools_section[data-section="'+clickedMainSection+'"]').animate({"left":"0px"},500);
+			$('.tools_section[data-section="'+previousMainSection+'"]').animate({"left":"-34%"},500, function() {
+				$(this).css({"left":"34%"});
+			});
+			// finish by adding/removing current class
+			$('.tools_section[data-section="'+clickedMainSection+'"]').parent().find('.current').removeClass('current');
+			$('.tools_section[data-section="'+clickedMainSection+'"]').addClass('current');
+
+			// update active section
+			$(this).parent().find('.tools-section').find('.active').removeClass('active');
+			$(this).find('.section-icons').addClass('active');
+
+
+			clickedMainSectionNum = clickedMainSection.split('-');
+			clickedMainSectionNum = clickedMainSectionNum[1];
+			if(clickedMainSectionNum == 1) {
+				$(this).parent().find('.arrow_mask_inner').animate({"left":"-133%"}, 500);
+			}
+			if(clickedMainSectionNum == 2) {
+				$(this).parent().find('.arrow_mask_inner').animate({"left":"-100%"}, 500);
+			}
+			if(clickedMainSectionNum == 3) {
+				$(this).parent().find('.arrow_mask_inner').animate({"left":"-66%"}, 500);
+			}
+
+
+
+
+		} else {
+			console.log("closing")
+			$('.tools_section[data-section="'+clickedMainSection+'"]').parent().parent().parent().slideToggle(500);
+			$(this).parent().find('.tools-section').removeClass('active');
+
+			if($(this).parent().find('.tools-section').find('.active').length > 0) {
+				console.log("shoudl have closed class");
+				$(this).parent().find('.tools-section').find('.active').removeClass('active');
+			} else {
+				console.log("should have added class");
+				$(this).find('.section-icons').addClass('active');
+			}
+
+		}
+		e.preventDefault();
+	})
 });

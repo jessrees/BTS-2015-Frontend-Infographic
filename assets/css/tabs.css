@@ -1,6 +1,5 @@
 .tab-section {
 	width: 100%;
-
 }
 .flex-test {
 	display: flex;
@@ -85,6 +84,41 @@
 	font-weight: bold;
 	right: 22px;
 }
+
+
+
+
+.tools_sections {
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin-top: -23px;
+}
+.tools_sections_inner {
+	width: 300%;
+	position: relative;
+}
+.tools_section {
+	width: 33.4%;
+	float: left;
+	position: absolute;
+	left: 34%;
+}
+.tools_section.current {
+	left: 0;
+}
+
+.timeline-container {
+	margin: 0;
+	padding: 0;
+}
+.timeline-container .row {
+	padding: 0;
+	margin: 0;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
 	.container-lead {

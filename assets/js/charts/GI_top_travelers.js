@@ -5,7 +5,8 @@ $(function () {
     $('#gi_top_travelers').highcharts({
         chart: {
             type: 'column',
-            backgroundColor: null
+            backgroundColor: null,
+            height: 350
         },
         title: {
             text: null
