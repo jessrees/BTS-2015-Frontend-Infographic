@@ -1,4 +1,4 @@
-$(function () {
+function create_pp_1() {
     Highcharts.setOptions({
         colors: ['#2ea6d5', '#e71f53', '#fac249', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
     });
@@ -58,4 +58,4 @@ $(function () {
 
         }]
     });
-});
+}

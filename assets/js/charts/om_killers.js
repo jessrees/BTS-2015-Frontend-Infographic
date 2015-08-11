@@ -1,4 +1,4 @@
-$(function () {
+function create_om_3() {
 
     Highcharts.setOptions({
         colors: ['#2ea6d5', '#e71f53', '#fac249', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
@@ -58,7 +58,7 @@ $(function () {
                         fontFamily: '"FacitWeb-semibold", "lucida grande", sans-serif',
                     },
                     formatter: function () {
-                        return '<div style="margin-left: -10px; margin-top: 3px;"><span>' + this.y + '%</span></div>';
+                        return '<div style="margin-left: -10px; margin-top: 3px; color: #fff;"><span>' + this.y + '%</span></div>';
                     },
                     useHTML: true
                 }
@@ -86,4 +86,4 @@ $(function () {
             data: [50]
         }]
     });
-});
+}

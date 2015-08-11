@@ -1,9 +1,9 @@
-$(function() {
+function create_gi_2() {
     $('.circle-largest').animate({"margin-left":"-50%","height":"100%", "width":"100%"}, 600, 'easeOutQuint');
     $('.circle-medium').delay(150).animate({"margin-left":"-40%","height":"80%", "width":"80%"}, 900, 'easeOutQuint');
     $('.circle-smallest').delay(300).animate({"margin-left":"-30%","height":"60%", "width":"60%"}, 1200, 'easeOutQuint');    
     $('.circle-num').addClass('full-opacity');
-});
+}
 
 // $(function () {
 //     Highcharts.setOptions({

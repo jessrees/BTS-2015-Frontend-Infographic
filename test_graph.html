@@ -1,0 +1,118 @@
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Kaplan Infographic</title>
+    <!-- Default Style Sheets -->
+        <link rel="stylesheet" href="assets/_external-css/application.css">
+        <link rel="stylesheet" href="assets/_external-css/content.css">
+        <link rel="stylesheet" href="assets/_external-css/fonts.css">
+    <!-- Stylesheet for infographics -->
+        <link rel="stylesheet" type="text/css" href="assets/css/infographic-style.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/tabs.css" />
+    <!-- Stylesheet for charts --> 
+        <link rel="stylesheet" href="assets/css/data-vis.css">
+    <!-- Default js -->
+        <script src="assets/_external-js/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="assets/_external-js/kaptest-min-new.js"></script>
+    
+
+</head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+<script src="assets/_external-js/Highcharts/js/highcharts.js"></script>
+<script src="assets/_external-js/Highcharts/js/modules/treemap.js"></script>
+<script type="text/javascript" src="assets/js/charts/wo_reap_benefits.js"></script>
+<script type="text/javascript" src="assets/js/charts/pp_career_goals.js"></script>
+<script type="text/javascript" src="assets/js/charts/om_compare.js"></script>
+<script type="text/javascript" src="assets/js/charts/GI_work_mba.js"></script>
+<script type="text/javascript" src="assets/js/charts/GI_top_travelers.js"></script>
+<script type="text/javascript" src="assets/js/charts/pp_programs.js"></script>
+<script type="text/javascript" src="assets/js/charts/om_killers.js"></script>
+<script type="text/javascript" src="assets/js/jquery.lazylinepainter-1.5.1.js"></script>
+
+<script>
+
+function create_gi_1() {
+    Highcharts.setOptions({
+        colors: ['#2ea6d5', '#e71f53', '#fac249', '#e7579d', '#2ea6d5', '#ef7933', '#c0d44c', '#fac249']
+    });
+    $('#gi_work_mba').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie',
+            width: 300,
+            backgroundColor: null
+        },
+        title: {
+            text: null
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.0f}%</b>'
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                showInLegend: true,
+                dataLabels: {
+                    defer: false,
+                    enabled: true,
+                    formatter: function() {
+                        return Math.round(this.percentage*100)/100 + '%';
+                    },
+                    distance: -50,
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'white',
+                        fontFamily: '"FacitWeb", "lucida grande", sans-serif',
+                        fontSize: '1.5em',
+                        textShadow: 'none'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "Career Goals",
+            colorByPoint: true,
+            animation: {
+                duration: 1000,
+            },
+            data: [{
+                name: "Enhance existing career",
+                y: 34
+            }, {
+                name: "Switch Careers",
+                y: 38
+            }, {
+                name: "Start own business",
+                y: 28
+            }]
+        }]
+    });
+}
+
+$(document).ready(function() {
+	$('.btn_click').click(function() {
+	    create_gi_1();
+	    console.log("clicked");
+	});
+})
+
+
+</script>
+
+<div id="gi_work_mba"></div>
+
+<div class="btn_click">click</div>

@@ -1,4 +1,4 @@
-$(function () {
+function create_gi_3() {
 	Highcharts.setOptions({
 	    colors: ['#2ea6d5', '#ef7939', '#fac249', '#e71f53', '#fac249']
 	});
@@ -6,7 +6,7 @@ $(function () {
         chart: {
             type: 'column',
             backgroundColor: null,
-            height: 350
+            height: 350,
         },
         title: {
             text: null
@@ -39,6 +39,9 @@ $(function () {
         plotOptions: {
             column: {
                 pointPadding: 0.01,
+                animation: {
+                    duration: 2000
+                },
                 borderWidth: 0,
                 groupPadding: .05,
                 colorByPoint: true,
@@ -55,8 +58,7 @@ $(function () {
             data: [97, 95, 94, 81],
             cursor: 'pointer',
             animation: {
-                duration: 1000,
-                easing: 'easeOutCirc'
+                duration: 20000
             },
             dataLabels: {
 	            enabled: true,
@@ -75,4 +77,4 @@ $(function () {
 	        }
         }]
     });
-});
+}

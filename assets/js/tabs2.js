@@ -41,7 +41,6 @@ var expandIcon = function() {
 $(function() {
 	$('.star').each(function() {
 		start = Math.random();
-		console.log(start);
 		$(this).css({"opacity":start});
 	});
 })
@@ -50,13 +49,26 @@ $(function() {
 window.setInterval(function() {
 $('.star').each(function() {
 		var start = Math.random();
-		console.log(start);
 		$(this).animate({"opacity":"1"}, 500, function() {
 			$(this).animate({"opacity":start}, 500);
 		})
 	});
 
 }, 1000);
+
+
+
+
+
+
+// hovering over map 
+
+$('.hover_map_show').mouseenter(function() {
+	$('.map_label').stop().animate({"opacity":"1"},500);
+}).mouseleave(function() {
+	$('.map_label').stop().animate({"opacity":"0"},500)
+})
+
 
 
 
@@ -72,6 +84,23 @@ window.setInterval(function() {
 }, 1200);
 
 
+
+
+
+// svg CLOSE animation 
+$(function() {
+	$('.svg-ico').mouseenter(function() {
+		if($(this).hasClass('active')) {
+			console.log("entered 2");
+			$(this).find('.open_svg').addClass('hide_svg');
+			$(this).find('.close_svg').addClass('show_svg');
+		}
+	}).mouseleave(function() {
+			console.log("entered 2");
+			$(this).find('.open_svg').removeClass('hide_svg');
+			$(this).find('.close_svg').removeClass('show_svg');
+	})
+})
 
 
 
@@ -135,10 +164,57 @@ $(function() {
 		}
 	});
 
+
+	// render charts when in view
+	rendered1 = false;
+	rendered2 = false;
+	rendered3 = false;
+	$(window).bind('scroll', function() {
+		isScrolledIntoView($('.info-1'));
+		isScrolledIntoView($('.info-2'));
+		isScrolledIntoView($('.info-3'));
+
+		console.log("alive");
+
+		function isScrolledIntoView(elem) {
+			var $elem = $(elem);
+			var $window = $(window);
+
+			var docViewTop = $window.scrollTop();
+			var docViewBottom = docViewTop + $window.height();
+
+			var elemTop = $elem.offset().top;
+			var elemBottom = elemTop + $elem.height();
+
+			half = $(window).height()/5;
+
+			if(docViewTop > elemTop-half) {
+				if(elem.selector == ".info-1" && !rendered1) {
+					create_gi_2();
+					rendered1 = true;
+				}
+				if(elem.selector == ".info-2" && !rendered2) {
+					create_pp_2();
+					rendered2 = true;
+				}
+				if(elem.selector == ".info-3" && !rendered3) {
+					create_om_2();
+					rendered3 = true;
+				}
+			}
+		}
+
+		// once all charts are rendered, remove this to save da power
+		if(rendered1 && rendered2 && rendered3) {
+			$(this).unbind('scroll');
+		}
+	})
+
 	
 	expandIcon();
 
 	tabSizer();
+
 
 	$('.tab').find('a').click(function(e) {
 
@@ -147,6 +223,10 @@ $(function() {
 		setTimeout(function () {
     		$(window).trigger('resize');
 		}, 1);
+
+
+
+		// animate charts
 
 
 
@@ -211,6 +291,28 @@ $(function() {
 			}
 		}
 
+
+		if(groupId == 1 && clickedTab == 3) {
+			create_gi_3();
+		}
+		if(groupId == 1 && clickedTab == 1) {
+			create_gi_1();
+		}
+
+
+		if(groupId == 2 && clickedTab == 1) {
+			create_pp_1();
+		}
+
+
+
+
+		if(groupId == 3 && clickedTab == 3) {
+			create_om_3();
+		}
+
+
+
 		e.preventDefault();
 
 	})
@@ -219,6 +321,8 @@ $(function() {
 
 
 $(function() {
+
+
 	$('.tools-section').click(function(e) {
 	
 		// get which section was clicked
@@ -243,6 +347,7 @@ $(function() {
 			// update active section
 			$(this).parent().find('.tools-section').find('.active').removeClass('active');
 			$(this).find('.section-icons').addClass('active');
+			$(this).find('.svg-ico').addClass('active');
 
 
 			clickedMainSectionNum = clickedMainSection.split('-');
@@ -258,22 +363,26 @@ $(function() {
 			}
 
 
-
-
 		} else {
-			console.log("closing")
 			$('.tools_section[data-section="'+clickedMainSection+'"]').parent().parent().parent().slideToggle(500);
 			$(this).parent().find('.tools-section').removeClass('active');
 
 			if($(this).parent().find('.tools-section').find('.active').length > 0) {
-				console.log("shoudl have closed class");
 				$(this).parent().find('.tools-section').find('.active').removeClass('active');
 			} else {
-				console.log("should have added class");
 				$(this).find('.section-icons').addClass('active');
+				$(this).find('.svg-ico').addClass('active');
 			}
 
 		}
+
+		if(clickedMainSection == "1-2") {
+			console.log("pins!");
+			$('.pin').removeClass('small-pin');
+		}
+
+
+
 		e.preventDefault();
 	})
 });
